@@ -22,6 +22,7 @@ def start():
         ProgramListIdx = ProgramListIdx+1
     TimerCPU = 0
     ProgramListIdx = 1
+    Qx_64_CPU()
     for i in range(len(Programs)):
         coderidx.append(0)
         while True:
@@ -44,7 +45,12 @@ def Qx_64_CPU(code, codei):
         rv = 0
         if code[codeIdx] == 0:
             if codeIdx % 8 == 0:
-                Programs.pop()
+                Programs.pop(ProgramListIdx)
+                quit()
+        elif code[codeidx] == 1:
+            codeidx = codeidx + 4
+            deal1 = deal1 + code[code.index]
+            code.index = code.index+1
 def switch():
     ProgramListIdx = ProgramListIdx + 1
     TimerCPU = 0
@@ -59,4 +65,3 @@ def switch():
 def startup():
     start()
     quit()
-startup()
